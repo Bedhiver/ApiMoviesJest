@@ -5,6 +5,7 @@ import logger from "morgan";
 import path from "path";
 import homeRouter from "./routes/home.js";
 import usersRouter from "./routes/users.js";
+import fooRouter from "./routes/foo.js";
 import { createServer } from "http";
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
@@ -17,6 +18,7 @@ app.use(cookieParser());
 app.use(express.static(join(__dirname, "public")));
 
 app.use("/", homeRouter);
+app.use("/foo", fooRouter);
 app.use("/users", usersRouter);
 
 var server = createServer(app);
