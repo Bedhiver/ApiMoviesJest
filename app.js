@@ -2,13 +2,13 @@ import express, { json, urlencoded } from "express";
 import { join } from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
-import path from "path";
-import homeRouter from "./routes/home.js";
-import usersRouter from "./routes/users.js";
-import fooRouter from "./routes/foo.js";
+// import path from "path";
+import homeRouter from "./components/home/home";
+import usersRouter from "./components/movies/moviesRoute";
+import fooRouter from "./components/foo/fooRoute";
 import { createServer } from "http";
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+// const __dirname = path.dirname(new URL(import.meta.url).pathname);
 var app = express();
 
 app.use(logger("dev"));
