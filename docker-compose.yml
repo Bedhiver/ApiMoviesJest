@@ -12,7 +12,7 @@ services:
         environment:
             - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
             - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-            - MONGO_INITDB_DATABASE=dbProject
+            - MONGO_INITDB_DATABASE=db-movies
 
     mongo-express:
         image: mongo-express

@@ -4,14 +4,19 @@
   "private": true,
   "main": "app.js",
   "jest": {
+    "modulePathIgnorePatterns": [
+      "./mongo"
+    ],
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "/node_modules/",
+      "./mongo"
     ]
   },
   "scripts": {
     "start": "nodemon --exec babel-node app.js",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
+    "test:watch": "jest --watch --detectOpenHandles",
     "watch": "concurrently --kill-others npm:watch-*",
     "watch-node": "nodemon app.js"
   },
