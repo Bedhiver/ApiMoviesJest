@@ -24,10 +24,19 @@ const data = [
 
 
 print('Start #################################################################');
-
 db = db.getSiblingDB('dbMovies');
 db.createCollection('movies');
 db.movies.insertMany(data);
+db.createUser({
+  user: 'root',
+  pwd: 'toor',
+  roles: [
+      {
+          role: 'readWrite',
+          db: 'dbMovies',
+      },
+  ],
+});
 
 
 print('END #################################################################');

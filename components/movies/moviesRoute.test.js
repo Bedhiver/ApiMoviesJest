@@ -1,11 +1,18 @@
 import { jest, it, expect } from "@jest/globals";
 import server from "../../server";
 import supertest from "supertest";
+import mongoose from "mongoose";
 
 jest.useFakeTimers();
 // jest.setTimeout(10000);
 
+const databaseName = "dbMovies";
 const request = supertest(server);
+
+beforeAll(async () => {
+  const url = `mongodb://@localhost:27017/${databaseName}`;
+  await mongoose.connect(url, { useNewUrlParser: true });
+});
 
 it("Get the movies endpoint", async () => {
   try {

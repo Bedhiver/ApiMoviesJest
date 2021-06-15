@@ -10,7 +10,8 @@ export default async function initClientDbConnection() {
   try {
     // await mongoose.connect(process.env.URL_MONGO, clientOptions);
     await mongoose.connect(
-      `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@localhost:27017`,
+      // `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@localhost:27017/`,
+      `mongodb://root:toor@localhost:27017/dbMovies`,
       clientOptions
     );
     console.log("Connected");
