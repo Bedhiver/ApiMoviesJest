@@ -3,17 +3,16 @@ version: "3"
 services:
     mongo:
         container_name: mongo
-        image: mongo
+        image: mongo:latest
         env_file: 
             - .env
         volumes:
-            - "./db/dataMovies.js:/docker-entrypoint-initdb.d/dataMovies.js"
+            - "./db/dataMovies.js:/docker-entrypoint-initdb.d/data.js"
         ports:
             - "27017:27017"
         environment:
-            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
-            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-            - MONGO_INITDB_DATABASE=dbMovies
+            - MONGO_INITDB_ROOT_USERNAME=devroot
+            - MONGO_INITDB_ROOT_PASSWORD=devroot
 
     mongo-express:
         image: mongo-express

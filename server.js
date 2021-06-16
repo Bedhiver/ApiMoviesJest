@@ -9,8 +9,6 @@ import { createServer } from "http";
 // import mongodb from "./services/mongo";
 import cors from "cors";
 import dotenv from 'dotenv';
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 // import path from "path";
 
 // const __dirname = path.dirname(new URL(import.meta.url).pathname);
